@@ -85,6 +85,7 @@ func buyCommands() {
         break
     }
 }
+//TODO: Fix chosen PC Description
 print(chosenPC)
 
 
