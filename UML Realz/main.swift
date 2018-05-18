@@ -61,5 +61,32 @@ class PC {
         self.screen = screen;
     }
 }
-//fsdfsdfsd
 
+class User {
+    var id : Int;
+    var name : String;
+    var password : String;
+    var info : String;
+    
+    init(id:Int, name:String, password:String, info:String) {
+        self.id = id;
+        self.name = name;
+        self.password = password;
+        self.info = info;
+    }
+}
+
+let newUser = User.init(id: 1, name: "Nilas", password: "123", info: "Im alive!")
+
+
+
+
+
+print("Hello User! Please log in.")
+print("Whats your username?")
+if readLine() == newUser.name {
+    print("Password:")
+    if readLine() == newUser.password{
+        print("You have sucessfully logged in. What do you want to do?")
+    }
+}
