@@ -46,10 +46,10 @@ class PC {
     var price : Double;
     let graphicsCard : String;
     let processor : String;
-    let RAM : [String : Int];
-    let screen : [String : Int];
+    let RAM : String;
+    let screen : String;
     
-    init(name : String, brand : String, id : Int, price : Double, graphicsCard : String, processor : String, RAM : [String : Int], screen : [String : Int]) {
+    init(name : String, brand : String, id : Int, price : Double, graphicsCard : String, processor : String, RAM : String, screen : String) {
         
         self.name = name;
         self.brand = brand;
@@ -59,8 +59,35 @@ class PC {
         self.processor = processor;
         self.RAM = RAM;
         self.screen = screen;
+        
+        var description : String {
+            return "\(name), \(brand)"
+        }
     }
 }
+
+
+    var chosenPC: PC
+    chosenPC = PC.init(name: "", brand: "", id: 0, price: 0.0, graphicsCard: "", processor: "", RAM: "", screen: "")
+
+
+
+let MSI1 = PC.init(name: "QE40", brand: "MSI", id: 1, price: 199.95, graphicsCard: "GTX 1060", processor: "8700HQ", RAM: "DDR4 16GB", screen: "1920x1080")
+
+
+
+func buyCommands() {
+    let buyAction = readLine()
+    switch buyAction {
+    case "buy PC1"?:
+        chosenPC = MSI1
+    default:
+        break
+    }
+}
+print(chosenPC)
+
+
 
 class User {
     var id : Int;
@@ -90,3 +117,4 @@ if readLine() == newUser.name {
         print("You have sucessfully logged in. What do you want to do?")
     }
 }
+
